@@ -1,0 +1,13 @@
+<div id="search-component">
+    <h4>Busca de Contatos</h4>
+   
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+   
+    <ul class="search-result">
+      <li *ngFor="let contato of contatos$ | async" >
+        <a routerLink="/detalhe/{{contato.id}}">
+          {{contato.name}}
+        </a>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,35 @@
+<div *ngIf="contato">
+
+    <h2>Detalhes do {{contato.name | uppercase}}</h2>
+
+    <div class="ID"><span>ID: </span>{{contato.id}}</div>
+
+    <div>
+        <label>Nome:
+            <input [(ngModel)]="contato.name" placeholder="name" />
+        </label>
+    </div>
+    <div>
+        <label>Endereço:
+            <input [(ngModel)]="contato.address" placeholder="endereço">
+        </label>
+    </div>
+    <div>
+        <label>Cidade:
+            <input [(ngModel)]="contato.city" placeholder="cidade">
+        </label>
+    </div>
+    <div>
+        <label>Estado:
+            <input [(ngModel)]="contato.state" placeholder="estado">
+        </label>
+    </div>
+    <div>
+        <label>Telefone:
+            <input [(ngModel)]="contato.telephone" placeholder="telefone">
+        </label>
+    </div>
+
+    <button (click)="goBack()">Voltar</button>
+    <button (click)="save()" class="update">Atualizar</button>
+</div>

@@ -1,0 +1,59 @@
+<app-contato-search></app-contato-search>
+
+<app-top-contatos></app-top-contatos>
+
+<div>
+    <h2>Meus contatos</h2>
+    <table class="table">
+        <tr>
+            <th scope="row">
+                ID
+            </th>
+            <th scope="row">
+                NOME
+            </th>
+            <th scope="row">
+                ENDEREÇO
+            </th>
+            <th scope="row">
+                CIDADE
+            </th>
+            <th scope="row">
+                ESTADO
+            </th>
+            <th scope="row">
+                TELEFONE
+            </th>
+        </tr>
+        <tr *ngFor="let contato of contatos">
+            <td>
+                {{ contato.id }}
+            </td>
+            <td>
+                {{ contato.name }}
+            </td>
+            <td>
+                {{ contato.address }}
+            </td>
+            <td>
+                {{ contato.city }}
+            </td>
+            <td>
+                {{ contato.state }}
+            </td>
+            <td>
+                {{ contato.telephone }}
+            </td>
+            <td>
+                <button style="margin-left: 10px" routerLink="/detalhe/{{ contato.id }}">
+                    Editar
+                </button>
+            </td>
+            <td>
+                <button class="" title="delete contato" (click)="delete(contato)">
+                    Excluir
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,9 @@
+<h3>4 primeiros contatos da agenda</h3>
+
+<div class="grid grid-pad">
+    <a *ngFor="let contato of contatos" class="col-1-4" routerLink="/detalhe/{{ contato.id }}">
+        <div class="module contato">
+            <h4>{{ contato.name }}</h4>
+        </div>
+    </a>
+</div>

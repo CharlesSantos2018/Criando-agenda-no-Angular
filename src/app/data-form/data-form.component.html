@@ -1,0 +1,83 @@
+<h2>Formulário Reativo</h2>
+<form [formGroup]="formulario">
+  <div class="form-group" style="border-radius: 20px;">
+    <label for="inputNome">Nome:</label>
+    <input formControlName="nome">
+    <div *ngIf="!nome.pristine && nome.errors">
+      <p *ngIf="nome.errors.required">
+        Nome obrigatório!
+      </p>
+      <p *ngIf="nome.errors.minlength">
+        Conter no mínimo 4 caracteres!!
+      </p>
+      {{ nome.errors | json}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEndereço">Endereço:</label>
+    <input formControlName="endereco">
+    <div *ngIf="!endereco.pristine && endereco.errors">
+      <p *ngIf="endereco.errors.required">
+        Campo obrigatório!!
+      </p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputCidade">Cidade:</label>
+    <input formControlName="cidade">
+  </div>
+  <div class="form-group">
+    <label for="inputEstado">Estado:</label>
+    <select formControlName="estado">
+      <option selected>ESTADOS</option>
+      <option value="AC">Acre</option>
+      <option value="AL">Alagoas</option>
+      <option value="AP">Amapá</option>
+      <option value="AM">Amazonas</option>
+      <option value="BA">Bahia</option>
+      <option value="CE">Ceará</option>
+      <option value="DF">Distrito Federal</option>
+      <option value="ES">Espírito Santo</option>
+      <option value="GO">Goiás</option>
+      <option value="MA">Maranhão</option>
+      <option value="MT">Mato Grosso</option>
+      <option value="MS">Mato Grosso do Sul</option>
+      <option value="MG">Minas Gerais</option>
+      <option value="PA">Pará</option>
+      <option value="PB">Paraíba</option>
+      <option value="PR">Paraná</option>
+      <option value="PE">Pernambuco</option>
+      <option value="PI">Piauí</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="RN">Rio Grande do Norte</option>
+      <option value="RS">Rio Grande do Sul</option>
+      <option value="RO">Rondônia</option>
+      <option value="RR">Roraima</option>
+      <option value="SC">Santa Catarina</option>
+      <option value="SP">São Paulo</option>
+      <option value="SE">Sergipe</option>
+      <option value="TO">Tocantins</option>
+      <option value="ES">Estrangeiro</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="inputTelefone">Telefone:</label>
+    <input formControlName="telefone">
+    <div *ngIf="!telefone.pristine && telefone.errors">
+      <p *ngIf="telefone.errors.required">
+        Campo obrigatório!!
+      </p>
+    </div>
+  </div>
+  <div>
+    <button (click)="add()" [disabled]="!formulario.valid">
+      Adicionar
+    </button>
+  </div>
+  <!--  <div class="form-group">
+    <button (click)="add(contatoNome.value, contatoEndereco.value, contatoCidade.value, 
+        contatoEstado.value, contatoTelefone.value)>
+      Adicionar
+    </button>
+    </div>-->
+</form>
